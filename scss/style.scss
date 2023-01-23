@@ -1,0 +1,331 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+$whitecol: #ffffff;
+$oswald: "Oswald", sans-serif;
+$grey: #666666;
+$title: #464547;
+$bluecol: #55c2d8;
+$brown: #8c4f2a4d;
+$white40: rgba(255, 255, 255, 0.4);
+
+@mixin df($ai: center, $js: center, $fd: row) {
+  display: flex;
+  align-items: $ai;
+  justify-content: $js;
+  flex-direction: $fd;
+}
+
+.container {
+  max-width: 1200px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  .navbar {
+    height: 13vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    input {
+      display: none;
+    }
+    label {
+      span {
+        display: none;
+      }
+    }
+    .logo {
+      text-transform: uppercase;
+      color: $whitecol;
+      font-size: 20px;
+      font-weight: 600;
+    }
+    .menus {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      li {
+        margin: 0px 10px;
+        a {
+          font-size: 14px;
+          text-decoration: none;
+          text-transform: uppercase;
+          color: $whitecol;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 720px) and (min-width: 300px) {
+  .nav {
+    label {
+      span {
+        display: block !important;
+        #bar {
+          color: $whitecol;
+          font-size: 24px;
+        }
+      }
+    }
+    .menus {
+      position: absolute;
+      background-color: $title;
+      width: 100vw;
+      left: 0;
+      top: 500px;
+      height: 80vh;
+      transition: 0.4s;
+      @include df(center, center, column);
+      visibility: hidden;
+      opacity: 0;
+      pointer-events: none;
+      li {
+        margin: 10px 0 !important;
+      }
+    }
+    input {
+      &:checked + .menus {
+        top: 13vh;
+        transition: 0.4s;
+        visibility: visible !important;
+        pointer-events: all;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.main {
+  height: 100vh;
+  background-image: url(../image/Desktop_Backgrounds_1920x1200_6\ 3@3x.png);
+  background-position: center;
+  background-size: cover;
+  @include df(center, center, column);
+  img {
+    width: 63px;
+    height: 63px;
+  }
+  h1 {
+    color: $whitecol;
+    text-align: center;
+    font-weight: 700;
+    font-size: 48px;
+    font-family: $oswald;
+    margin: 10px;
+  }
+  p {
+    color: $whitecol;
+    color: #ffffffbf;
+    font-weight: 400;
+    font-size: 24px;
+    text-align: center;
+  }
+}
+
+.twolines {
+  height: 700px;
+  padding: 30px 0;
+  @include df(center, center, column);
+  .top {
+    @include df(center, center, column);
+    h1 {
+      font-size: 48px;
+      font-weight: 700;
+      text-align: center;
+      color: $title;
+    }
+    p {
+      font-size: 24px;
+      font-weight: 400;
+      color: $grey;
+      text-align: center;
+      line-height: 32px;
+      margin-top: 10px;
+    }
+  }
+
+  .bottom {
+    padding: 30px 0;
+    margin: 25px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+    row-gap: 20px;
+    width: 95%;
+    max-width: 1000px;
+    margin: 0 auto;
+    & > div {
+      font-size: 16px;
+      font-weight: 400;
+      color: $grey;
+    }
+    .left {
+      height: 172px;
+    }
+    .right {
+      height: 172px;
+    }
+  }
+  .btns {
+    @include df();
+    button {
+      background-color: $bluecol;
+      text-transform: uppercase;
+      padding: 10px 10px;
+      font-weight: 400;
+      font-size: 16px;
+      border-radius: 18px;
+      color: $whitecol;
+      border: none;
+    }
+  }
+}
+
+@media (max-width: 720px) and (min-width: 300px) {
+  .twolines {
+    height: auto;
+    .top {
+      h1 {
+        font-size: 38px;
+      }
+    }
+
+    .bottom {
+      margin: 15px 0 !important;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr) !important;
+    }
+  }
+}
+
+.learn {
+  height: 100vh;
+  background-image: url(../image/Learn-more__image.png);
+  background-size: cover;
+  background-position: center;
+  .cover {
+    height: 100%;
+    background-color: $brown;
+    @include df(center, center, column);
+    h1 {
+      color: $whitecol;
+      font-size: 48px;
+      font-family: $oswald;
+      font-weight: 700;
+      text-align: center;
+    }
+    .play {
+      width: 80px;
+      height: 80px;
+      margin: 20px 0;
+      background-color: $bluecol;
+      border-radius: 50%;
+      position: relative;
+      img {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-40%, -50%);
+      }
+    }
+    p {
+      text-align: center;
+      font-weight: 400;
+      font-size: 24px;
+      color: $whitecol;
+    }
+  }
+}
+
+.footer {
+  background-color: $title;
+  padding: 30px 0;
+  .foot {
+    height: 20vh;
+    display: flex;
+    .right {
+      flex: 1;
+      height: 100%;
+
+      display: flex;
+      .logoside {
+        flex: 1;
+        .logopage {
+          @include df(center, flex-start, row);
+          img {
+            width: 20px;
+            height: 20px;
+          }
+          span {
+            text-transform: uppercase;
+            color: $whitecol;
+            margin-left: 15px;
+            font-weight: 400;
+            font-size: 18px;
+          }
+        }
+      }
+      .address {
+        flex: 1;
+        & > * {
+          font-weight: 400;
+          font-size: 16px;
+          color: $white40;
+        }
+        p {
+        }
+        a {
+          text-decoration: none;
+          display: block;
+          margin-top: 20px;
+        }
+      }
+    }
+    .left {
+      flex: 1;
+      height: 100%;
+      @include df(center, flex-end, column);
+      p {
+        color: rgba(255, 255, 255, 0.4);
+        font-weight: 400;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media (max-width: 720px) and (min-width: 300px) {
+  .foot {
+    height: 20vh;
+    @include df(center, center, column);
+    .right {
+      @include df(center, center, column);
+      & > * {
+        text-align: center;
+      }
+      .address {
+        a {
+          margin-top: 0 !important;
+        }
+      }
+    }
+  }
+}

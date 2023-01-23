@@ -1,0 +1,327 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.nav .navbar {
+  height: 13vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav .navbar input {
+  display: none;
+}
+.nav .navbar label span {
+  display: none;
+}
+.nav .navbar .logo {
+  text-transform: uppercase;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+}
+.nav .navbar .menus {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+.nav .navbar .menus li {
+  margin: 0px 10px;
+}
+.nav .navbar .menus li a {
+  font-size: 14px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: 400;
+}
+
+@media (max-width: 720px) and (min-width: 300px) {
+  .nav label span {
+    display: block !important;
+  }
+  .nav label span #bar {
+    color: #ffffff;
+    font-size: 24px;
+  }
+  .nav .menus {
+    position: absolute;
+    background-color: #464547;
+    width: 100vw;
+    left: 0;
+    top: 500px;
+    height: 80vh;
+    transition: 0.4s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .nav .menus li {
+    margin: 10px 0 !important;
+  }
+  .nav input:checked + .menus {
+    top: 13vh;
+    transition: 0.4s;
+    visibility: visible !important;
+    pointer-events: all;
+    opacity: 1;
+  }
+}
+.main {
+  height: 100vh;
+  background-image: url(../image/Desktop_Backgrounds_1920x1200_6\ 3@3x.png);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.main img {
+  width: 63px;
+  height: 63px;
+}
+.main h1 {
+  color: #ffffff;
+  text-align: center;
+  font-weight: 700;
+  font-size: 48px;
+  font-family: "Oswald", sans-serif;
+  margin: 10px;
+}
+.main p {
+  color: #ffffff;
+  color: rgba(255, 255, 255, 0.7490196078);
+  font-weight: 400;
+  font-size: 24px;
+  text-align: center;
+}
+
+.twolines {
+  height: 700px;
+  padding: 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.twolines .top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.twolines .top h1 {
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+  color: #464547;
+}
+.twolines .top p {
+  font-size: 24px;
+  font-weight: 400;
+  color: #666666;
+  text-align: center;
+  line-height: 32px;
+  margin-top: 10px;
+}
+.twolines .bottom {
+  padding: 30px 0;
+  margin: 25px 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
+  row-gap: 20px;
+  width: 95%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.twolines .bottom > div {
+  font-size: 16px;
+  font-weight: 400;
+  color: #666666;
+}
+.twolines .bottom .left {
+  height: 172px;
+}
+.twolines .bottom .right {
+  height: 172px;
+}
+.twolines .btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.twolines .btns button {
+  background-color: #55c2d8;
+  text-transform: uppercase;
+  padding: 10px 10px;
+  font-weight: 400;
+  font-size: 16px;
+  border-radius: 18px;
+  color: #ffffff;
+  border: none;
+}
+
+@media (max-width: 720px) and (min-width: 300px) {
+  .twolines {
+    height: auto;
+  }
+  .twolines .top h1 {
+    font-size: 38px;
+  }
+  .twolines .bottom {
+    margin: 15px 0 !important;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+}
+.learn {
+  height: 100vh;
+  background-image: url(../image/Learn-more__image.png);
+  background-size: cover;
+  background-position: center;
+}
+.learn .cover {
+  height: 100%;
+  background-color: rgba(140, 79, 42, 0.3019607843);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.learn .cover h1 {
+  color: #ffffff;
+  font-size: 48px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  text-align: center;
+}
+.learn .cover .play {
+  width: 80px;
+  height: 80px;
+  margin: 20px 0;
+  background-color: #55c2d8;
+  border-radius: 50%;
+  position: relative;
+}
+.learn .cover .play img {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+}
+.learn .cover p {
+  text-align: center;
+  font-weight: 400;
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.footer {
+  background-color: #464547;
+  padding: 30px 0;
+}
+.footer .foot {
+  height: 20vh;
+  display: flex;
+}
+.footer .foot .right {
+  flex: 1;
+  height: 100%;
+  display: flex;
+}
+.footer .foot .right .logoside {
+  flex: 1;
+}
+.footer .foot .right .logoside .logopage {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+.footer .foot .right .logoside .logopage img {
+  width: 20px;
+  height: 20px;
+}
+.footer .foot .right .logoside .logopage span {
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-left: 15px;
+  font-weight: 400;
+  font-size: 18px;
+}
+.footer .foot .right .address {
+  flex: 1;
+}
+.footer .foot .right .address > * {
+  font-weight: 400;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.4);
+}
+.footer .foot .right .address a {
+  text-decoration: none;
+  display: block;
+  margin-top: 20px;
+}
+.footer .foot .left {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+.footer .foot .left p {
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 400;
+  font-size: 16px;
+}
+
+@media (max-width: 720px) and (min-width: 300px) {
+  .foot {
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .foot .right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .foot .right > * {
+    text-align: center;
+  }
+  .foot .right .address a {
+    margin-top: 0 !important;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
